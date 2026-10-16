@@ -15,7 +15,7 @@ CREATE TABLE usuarios (
 -- Exemplo de usuário admin (senha: mudar123 — hash gerado com password_hash)
 INSERT INTO usuarios (login, senha, precisa_alterar) VALUES (
   'admin',
-  '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoSqxUtl3F7iXy1D0QZ3qX7iB9yKk0Zl2zXvL',
+  '$2b$12$BTAjszjidPq5WdhNxZXRc.rjSgEHRTSL3DVdSmJCn.ZhKt9OS1LYy',
   1
 );
 
