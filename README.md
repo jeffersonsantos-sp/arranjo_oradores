@@ -67,7 +67,10 @@ arranjo_de_oradores/
 
 1. Clone o repositório
 2. Configure o banco via `include/config.php` (use `getenv()` para produção)
-3. Importe o arquivo SQL localizado em `banco/`
+3. Importe o arquivo SQL de modelo: `mysql -u root -p arranjo_oradores < banco/modelo.sql`
+   - Contém estrutura básica (`usuarios`, `oradores_enviaremos`, `oradores_receberemos`)
+   - Usuário exemplo: `admin` / senha `mudar123` (hash `password_hash` no arquivo)
+   - **NÃO use `discurso_oradores.sql` — contém backup real com dados sensíveis (removido do repo)**
 4. Acesse via `http://localhost/arranjo_de_oradores/`
 
 > **Nota:** O arquivo `include/config.php` não é enviado ao GitHub (protegido pelo `.gitignore`). Para testes locais, crie uma cópia baseada em `include/config.php` com seus dados.
@@ -75,6 +78,8 @@ arranjo_de_oradores/
 ## 👤 Autor
 
 **Jefferson Santos** — Desenvolvedor responsável pelo projeto, design responsivo, segurança e arquitetura.
+
+> **Nota:** O arquivo `banco/discurso_oradores.sql` (backup real com senhas e listas) foi removido do repo por segurança. Utilize apenas `banco/modelo.sql` para testes.
 
 ---
 
