@@ -1,0 +1,23 @@
+# Bloquear acesso a arquivos sensíveis e pasta include
+<FilesMatch "^(config\.php|gerar_hash\.php|teste_senha\.php|teste_tabela\.php|teste_minimo\.html)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Bloquear acesso direto à pasta include
+<Directory "include">
+    Order deny,allow
+    Deny from all
+</Directory>
+
+# Proteção contra listagem de diretórios
+Options -Indexes
+
+# Cabeçalhos de segurança
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
+</IfModule>

@@ -1,0 +1,18 @@
+# Dados sensíveis - NUNCA subir
+include/config.php
+config.php
+
+# Arquivos internos/teste não devem ir para repo
+teste_*.php
+teste_*.html
+files for your website should be uploaded here!
+
+# Ambiente e cache
+.env
+*.log
+.idea/
+.vscode/
+
+# Dependências
+vendor/
+node_modules/
